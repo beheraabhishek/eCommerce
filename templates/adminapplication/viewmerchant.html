@@ -1,0 +1,18 @@
+{% include 'adminapplication/basicpage.html' %}
+<table align="center" border="5" style="border-style: solid">
+    <tr>
+        <th style="text-align: center; color: blueviolet" width="170"><h5>Merchant Id No</h5></th>
+        <th style="text-align: center; color: blueviolet" width="250"><h5>Merchant Name</h5></th>
+        <th style="text-align: center; color: blueviolet" width="300"><h5>Merchant Email ID</h5></th>
+        <th style="text-align: center; color: blueviolet" width="220"><h5>Merchant Contact No</h5></th>
+    </tr>
+    {% for x in merchant %}
+    <tr>
+        <th style="text-align: center"><h6>{{ x.id_no }}</h6></th>
+        <th style="text-align: center"><h6>{{ x.name }}</h6></th>
+        <th style="text-align: center"><h6>{{ x.username }}</h6></th>
+        <th style="text-align: center"><h6>{{ x.contact }}</h6></th>
+    </tr>
+    {% endfor %}
+</table><br><br><br><br><br><br><br><br><br>
+<div class="footer-copyright text-center py-3">Copyright © 2019-2020 abhishek Online Sales</div>

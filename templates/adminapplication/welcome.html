@@ -1,0 +1,10 @@
+{% load static %}
+{% include 'adminapplication/basicpage.html' %}
+<center>
+       <img src="{% static 'images/administrator.png' %}" width="100" height="100">
+       <h1 style="color: darkkhaki; font-family: Chiller; font-size: 60px">Welcome Administrator</h1>
+    {% if message %}
+        <h3 style="color: green; font-family: 'Microsoft JhengHei UI Light'">{{ message }}</h3>
+    {% endif %}
+</center><br><br><br><br><br><br>
+<div class="footer-copyright text-center py-3">Copyright © 2019-2020 abhishek Online Sales</div>

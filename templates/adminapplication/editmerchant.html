@@ -1,0 +1,18 @@
+{% include 'adminapplication/basicpage.html' %}
+{% load static %}
+<table align="center" border="5" style="border-style: solid">
+    <tr>
+        <th style="text-align: center; color: blueviolet" width="170"><h5>Merchant Id No</h5></th>
+        <th style="text-align: center; color: blueviolet" width="250"><h5>Merchant Name</h5></th>
+        <th style="text-align: center; color: blueviolet" width="220"><h5>Remove</h5></th>
+    </tr>
+    {% for x in object_list %}
+    <tr>
+        <th style="text-align: center"><h6>{{ x.id_no }}</h6></th>
+        <th style="text-align: center"><h6>{{ x.name }}</h6></th>
+        <th style="text-align: center"><a href="{% url 'deleteMerchant' x.id_no %}">
+            <img src="{% static 'images/delete.png' %}" width="40" height="40"></a> </th>
+    </tr>
+    {% endfor %}
+</table><br><br><br><br><br><br><br><br>
+<div class="footer-copyright text-center py-3">Copyright © 2019-2020 abhishek Online Sales</div>

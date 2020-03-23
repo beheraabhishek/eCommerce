@@ -1,0 +1,49 @@
+{% load static %}
+<title>Signup</title>
+<head>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+</head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+      <div class="fadeIn fourth">
+        <h1><img src="{% static 'images/sale.png' %}" width="100" height="100">ONLINE SALES</h1>
+    </div>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{% static 'images/login.png' %}" width="80" height="80"/>
+    </div>
+    <div class="fadeIn fourth">
+        <h4 style="color: darkslateblue">Register User</h4>
+    </div>
+
+    <!-- Login Form -->
+    <form action="{% url 'savesignup' %}" method="post">
+        {% csrf_token %}
+      <input type="text" id="admin" class="fadeIn first" name="uno" value="{{ idno }}" readonly>
+      <input type="text" id="admin" class="fadeIn second" name="name" placeholder="Name" required>
+      <input type="number" id="admin" class="fadeIn third" name="cno" placeholder="contact No" min="0" required>
+      <input type="text" id="admin" class="fadeIn first" name="address" placeholder="address" required>
+      <input type="email" id="admin" class="fadeIn second" name="email" placeholder="Email ID" required>
+      <input type="password" id="admin" class="fadeIn third" name="password" placeholder="password (8 characters minimum)" required maxlength="8">
+      <input type="password" id="admin" class="fadeIn third" name="conf_password" placeholder="retype password (8 characters minimum)" required maxlength="8">
+      <input type="submit" class="fadeIn fourth" value="Register">
+    </form>
+  {% if message1 %}
+          <span style="color: red">{{ message1 }}</span>
+      {% endif %}
+      {% if erroremail %}
+          <center><span style="color: red">{{ erroremail }}</span></center>
+      {% endif %}
+      {% if errorcont %}
+          <center><span style="color: red">{{ errorcont }}</span></center>
+      {% endif %}
+  <div class="footer-copyright text-center py-3">Copyright © 2019-2020 abhishek Online Sales</div>
+    </div>
+  </div>

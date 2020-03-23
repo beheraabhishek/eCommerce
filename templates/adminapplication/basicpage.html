@@ -1,0 +1,101 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+.dropbtn {
+  background-color: #0d0d0d;
+  color: greenyellow;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: cadetblue; border-radius: 5px}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: blueviolet;
+}
+</style>
+</head>
+<body><br>
+<table align="center" width="820">
+    <tr>
+        <th style="text-align: center"><img src="{% static 'images/sales.png' %}" width="120" height="120"></th>
+        <td style="text-align: center"><span style="font-size: 60px; font-family: 'Imprint MT Shadow'">ONLINE SALES</span></td>
+        <th style="text-align: center"><img src="{% static 'images/goods.png' %}" width="120" height="120"></th>
+    </tr>
+</table><br>
+   <table align="center">
+       <tr>
+           <th>
+               <div class="dropdown">
+                   <button style="width: 150px; border-radius: 10px" class="dropbtn"><a href="{% url 'home' %}" style="color: greenyellow">HOME</a></button>
+                   </div>
+               </div>
+           </th>
+           <th>
+               <div class="dropdown">
+                   <button style="width: 200px; border-radius: 10px" class="dropbtn">MERCHANT</button>
+                   <div class="dropdown-content" style="border-radius: 10px">
+                       <a href="/adminapp/addmerchant/">ADD MERCHANT</a>
+                       <a href="/adminapp/viewmerchant/">VIEW MERCHANT</a>
+                       <a href="/adminapp/editmerchant/">EDIT MERCHANT</a>
+                   </div>
+               </div>
+           </th>
+           <th>
+               <div class="dropdown">
+                   <button style="width: 200px; border-radius: 10px" class="dropbtn">SALES</button>
+                   <div class="dropdown-content" style="border-radius: 10px">
+                       <a href="/adminapp/appreg/">DAY</a>
+                       <a href="/adminapp/editapp/">WEEK</a>
+                       <a href="/adminapp/viewapp/">MONTH</a>
+                       <a href="/adminapp/viewapp/">YEAR</a>
+                   </div>
+               </div>
+           </th>
+           <th>
+               <div class="dropdown">
+                   <button style="width: 200px; border-radius: 10px" class="dropbtn">COMPLAINTS</button>
+                   <div class="dropdown-content" style="border-radius: 10px">
+                       <a href="/adminapp/empreg/">VIEW COMPLAINTS</a>
+                       <a href="/adminapp/editemp/">REPORT</a>
+                   </div>
+               </div>
+           </th>
+           <th>
+               <div class="dropdown">
+                   <button style="width: 150px; border-radius: 10px" class="dropbtn"><a href="{% url 'logout' %}" style="color: greenyellow">LOGOUT</a></button>
+               </div>
+           </th>
+       </tr>
+   </table><br><br>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% include 'adminapplication/basicpage.html' %}
+{% load static %}
+<form method="post"><br><br>
+    {% csrf_token %}
+    <center>
+        <h3 style="color: rosybrown">{{ object.username }}</h3><br>
+        <button type="submit" style="color: red">
+            <img src="{% static 'images/user.png' %}" width="45" height="45">{{ object.id_no }}</button>
+    </center>
+</form><br><br><br><br><br><br>
+<div class="footer-copyright text-center py-3">Copyright © 2019-2020 abhishek Online Sales</div>
